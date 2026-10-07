@@ -1,0 +1,68 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Bố cục khung ngoài xếp dọc bằng Flexbox */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header & Footer */
+.header,
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Navigation */
+.nav {
+  background-color: #444;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+}
+
+/* Khung chứa Content và Sidebar dàn ngang trên Desktop */
+.main-container {
+  display: flex;
+  flex: 1; /* Chiếm toàn bộ khoảng trống chiều cao giữa Nav và Footer */
+}
+
+.content {
+  flex: 3; /* Nội dung chính chiếm 3/4 chiều rộng */
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.sidebar {
+  flex: 1; /* Sidebar chiếm 1/4 chiều rộng */
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+}
+
+/* Responsive cho Mobile (Màn hình dưới hoặc bằng 768px) */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Chuyển Main Content và Sidebar thành xếp dọc */
+  }
+
+  .sidebar {
+    border-left: none;
+    border-top: 1px solid #ddd;
+  }
+}
